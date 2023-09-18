@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Calculator</title>
+    <!-- Include jQuery from Google's CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        /* Initial style for the result, hidden by default */
+        #result {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insurance Calculator</h1>
+    <label for="ageInput">Enter Your Age:</label>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button id="calculateButton">Calculate</button>
+    <button id="clearButton">Clear</button>
+    <div id="result">
+        Your insurance cost is: $<span id="insuranceCost"></span>/year
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Calculate insurance cost and display it
+            $("#calculateButton").click(function() {
+                var age = parseInt($("#ageInput").val());
+
+                if (!isNaN(age)) {
+                    var insuranceCost = 5 * age + 300;
+                    $("#insuranceCost").text(insuranceCost);
+                    $("#result").fadeIn();
+                }
+            });
+
+            // Clear age input and fade out result
+            $("#clearButton").click(function() {
+                $("#ageInput").val('');
+                $("#result").fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>
