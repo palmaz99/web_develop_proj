@@ -1,3 +1,5 @@
+// USE node.js to run
+// Use the route "http://localhost:3000/api/v1/weather" to open the app
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
