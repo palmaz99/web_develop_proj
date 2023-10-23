@@ -1,10 +1,9 @@
-// USE node.js to run
-// Use the route "http://localhost:3000/api/v1/weather" to open the app
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Define the /api/v1/weather route
 app.get('/api/v1/weather', (req, res) => {
@@ -16,6 +15,17 @@ app.get('/api/v1/weather', (req, res) => {
   };
 
   res.json(weatherData);
+});
+
+// Define the /submit-form route
+app.post('/submit-form', (req, res) => {
+  const formData = req.body; // Access the submitted form data here
+
+  // Process the form data as needed
+  // ...
+
+  // Send a response back to the client
+  res.send('Form submitted successfully!');
 });
 
 // Start the server
