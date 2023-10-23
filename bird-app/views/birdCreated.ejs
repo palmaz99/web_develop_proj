@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1><%= title %></h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Species</th>
+        <th>Nickname</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% birds.forEach(function(bird) { %>
+        <tr>
+          <td><%= bird.species %></td>
+          <td><%= bird.nickname %></td>
+          <td><%= bird.status %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" href="/birds/create">Add Bird</a>
+</div>
+</body>
+</html>

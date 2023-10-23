@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1><%= title %></h1>
+  <form method="POST" action="/birds/create">
+    <div class="form-group">
+      <label for="species">Species</label>
+      <input type="text" class="form-control" id="species" name="species">
+    </div>
+    <div class="form-group">
+      <label for="nickname">Nickname</label>
+      <input type="text" class="form-control" id="nickname" name="nickname">
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select class="form-control" id="status" name="status">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Register Bird</button>
+  </form>
+</div>
+</body>
+</html>
